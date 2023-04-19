@@ -50,8 +50,6 @@ function updateCarousel(index) {
   carouselText[index].classList.add('item-active');
 }
 
-
-
 const navbar = document.getElementById('navbar');
 const navbarToggle = document.getElementById('navbar-toggle');
 const navbarLinks = document.querySelectorAll('#navbar a');

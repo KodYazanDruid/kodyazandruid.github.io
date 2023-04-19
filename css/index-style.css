@@ -7,6 +7,7 @@
     --color-light-blue: #A5D7E8;
     --color-text: #d5eaf0;
     --color-star: #D4AF37;
+    --color-soft-red: #F47174;
 }
 
 * {
@@ -81,7 +82,7 @@ input:-webkit-autofill:active {
     transition: background-color;
     transition-delay: 5000s;
     -webkit-text-fill-color: var(--color-light-blue);
-}
+}   
 .container img {
     width: 35%;
     border-radius: 10px;
@@ -313,14 +314,37 @@ input:-webkit-autofill:active {
     width: 80%;
 }
 
-.contact-form>* {
+.contact-form * {
     padding: 10px;
     background-color: var(--color-secondary-bg);
     border-radius: 15px;
     color: var(--color-light-blue);
     flex-grow: 1;
 }
+.input-required {
+    display: none;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    padding: 0;
+    background-color: transparent;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-soft-red);
+}
+.input-h input {
+    padding: 0;
+    width: 95%;
+    border-radius: 0;
+    display: relative;
+    z-index: 1;
+}
+.input-h input:invalid + .input-required {
+    display: block;
+}
 .contact-form> .input-h {
+    position: relative;
     width: 40%;
 }
 .contact-form #subject {
@@ -395,7 +419,7 @@ textarea#message {
     .cat-photos div {
         width: 100%;
     }
-    .contact-form > input{
+    .contact-form > .input-h{
         width: 50%;
     }
 }
