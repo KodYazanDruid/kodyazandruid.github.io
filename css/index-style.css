@@ -337,8 +337,6 @@ input:-webkit-autofill:active {
     padding: 0;
     width: 95%;
     border-radius: 0;
-    display: relative;
-    z-index: 1;
 }
 .input-h input:invalid + .input-required {
     display: block;
