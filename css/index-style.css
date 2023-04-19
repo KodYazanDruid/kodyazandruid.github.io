@@ -18,7 +18,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth !important;
-    font-family: poppins, sans-serif;
+    font-family: poppins, sans-serif !important;
     list-style: none;
     scroll-margin-top: 150px;
 }
@@ -71,7 +71,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(165, 215, 232, 0.4);
+    background: rgba(165, 215, 232, 0.15);
     border-radius: 10px;
 }
 
@@ -82,7 +82,8 @@ input:-webkit-autofill:active {
     transition: background-color;
     transition-delay: 5000s;
     -webkit-text-fill-color: var(--color-light-blue);
-}   
+}
+
 .container img {
     width: 35%;
     border-radius: 10px;
@@ -98,6 +99,7 @@ input:-webkit-autofill:active {
 .active {
     top: 80px !important;
 }
+
 .item-active {
     display: block !important;
     transition: display 0.5ms;
@@ -107,10 +109,12 @@ input:-webkit-autofill:active {
 #logo {
     transition: cubic-bezier(0, 2.28, 0.95, 0.69) 0.5s;
 }
+
 .logo {
     display: flex;
     align-items: center;
 }
+
 .header {
     position: fixed;
     top: 0;
@@ -168,7 +172,7 @@ input:-webkit-autofill:active {
 
 .main-text {
     width: 65%;
-    
+
 }
 
 .carousel-wrapper {
@@ -227,7 +231,7 @@ input:-webkit-autofill:active {
 
 .cat-photos div {
     width: 400px;
-    height: 700px;
+    height: 550px;
     margin: 20px 0;
     background-color: var(--color-secondary-bg);
     border-radius: 10px;
@@ -235,8 +239,8 @@ input:-webkit-autofill:active {
 
 .cat-photos div img {
     width: inherit;
-    scale: 1.03;
     height: 70%;
+    min-height: 450px;
     object-fit: cover;
 }
 
@@ -251,25 +255,32 @@ input:-webkit-autofill:active {
 /* Section 3 */
 .rates {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    margin-top: 50px;
+    overflow-x: scroll;
+    /* box-shadow: var(--color-light-blue) 0px 0px 30px .1px; */
+    border-top: var(--color-light-blue) 2.5px solid;
+    border-bottom: var(--color-light-blue) 2.5px solid;
 }
 
-.rates .customer {
-    width: 200px;
+.customer {
+    width: 300px;
     height: 500px;
     margin: 20px 50px;
     background-color: var(--color-secondary-bg);
     border-radius: 50px;
+    flex-shrink: 0;
+    transition: all .65s ease-in-out;
+}
+
+.customer:hover {
+    scale: 1.05;
+    rotate: var(--int-rand);
 }
 
 .rates .stars {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 20px 30px;
+    margin: 20px 50px;
 }
 
 .star-rate-1 i:nth-child(-n+1) {
@@ -297,6 +308,10 @@ input:-webkit-autofill:active {
     box-shadow: none;
 }
 
+.rates img:hover {
+    scale: none;
+}
+
 .rates p {
     font-size: 18px;
     padding: 10px;
@@ -321,6 +336,7 @@ input:-webkit-autofill:active {
     color: var(--color-light-blue);
     flex-grow: 1;
 }
+
 .input-required {
     display: none;
     height: 16px;
@@ -333,31 +349,49 @@ input:-webkit-autofill:active {
     transform: translateY(-50%);
     color: var(--color-soft-red);
 }
+
+.input-required:hover::before {
+    content: 'doldur';
+    color: yellow;
+}
+
 .input-h input {
     padding: 0;
     width: 95%;
     border-radius: 0;
 }
-.input-h input:invalid + .input-required {
+
+.input-h input:invalid+.input-required {
     display: block;
 }
-.contact-form> .input-h {
+
+.contact-form>.input-h {
     position: relative;
     width: 40%;
 }
+
 .contact-form #subject {
     width: 100%;
 }
+
 textarea#message {
     resize: none;
     height: 250px;
 }
+
 .contact-form #submit {
     position: absolute;
     right: 8px;
     bottom: 8px;
     width: 70px;
     border: 2px var(--color-light-blue) solid;
+}
+
+/* Videos */
+
+.embed.video {
+    width: 80%; 
+    height: 500px;
 }
 
 /* Footer */
@@ -368,7 +402,11 @@ textarea#message {
 }
 
 /*Media Query*/
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1150px) {
+    .navmenu {
+        display: block;
+    }
+
     .navbar {
         position: absolute;
         z-index: -1;
@@ -383,9 +421,10 @@ textarea#message {
         translate: -50%;
         box-shadow: var(--color-light-blue) 0px 0px 20px 0px;
         transition: top 0.5s ease-out;
-
     }
+}
 
+@media only screen and (max-width: 1024px) {
     .main-text {
         height: 300px;
     }
@@ -393,13 +432,6 @@ textarea#message {
     .navbar li {
         margin: 10px 0;
         border-bottom: var(--color-star) 1px solid;
-    }
-
-    .navmenu {
-        display: block;
-        top: 20px;
-        right: 35px;
-        position: absolute;
     }
 
 }
@@ -417,7 +449,17 @@ textarea#message {
     .cat-photos div {
         width: 100%;
     }
-    .contact-form > .input-h{
+
+    .contact-form>.input-h {
         width: 50%;
+    }
+
+    .rates {
+        width: 100%;
+    }
+
+    .customer {
+        margin-left: 5px;
+        width: 300px;
     }
 }

@@ -72,3 +72,14 @@ logo.addEventListener('click', () => {
     logo.style.transform = "scale(1)";
   }, 600);
 });
+
+const customers = document.getElementsByClassName('customer')
+const r = Math.floor(Math.random() * 5) + 1
+for(let i of customers){
+  i.addEventListener('mouseover', () => {
+    i.style.rotate = (Math.floor(Math.random() * 10) - 5)+'deg';
+  })
+  i.addEventListener('mouseout', () => {
+    i.style.rotate = '0deg';
+  })
+}
