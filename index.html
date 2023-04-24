@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/index-style.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <script src="https://kit.fontawesome.com/16d88227e3.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -77,39 +76,61 @@
                 </div>
             </div>
             <ul class="button-list">
-                <li><button id="carousel-prev"><i class="fa-solid fa-arrow-left"></i></button></li>
-                <li><button id="carousel-next"><i class="fa-solid fa-arrow-right"></i></button></li>
+                <li><button id="carousel-prev"><img src="assets/svg/arrow-left-solid.svg" alt=""></button></li>
+                <li><button id="carousel-next"><img src="assets/svg/arrow-right-solid.svg" alt=""></button></li>
             </ul>
         </div>
-        <img src="assets/cat.jpg" alt="Cat">
+        <img class="content-img" src="assets/cat.jpg" alt="Cat">
     </section>
     <section id="cat-gallery" class="cat-gallery container">
         <h2>Cat Gallery</h2>
-        <div class="cat-photos">
+        <div class="content-changer">
+            <button id="cat-photos-btn" class="cat-content-active">Images</button>
+            <button id="cat-videos-btn">Videos</button>
+        </div>
+        <div id="cat-photos" class="cat-photos">
             <div class="cat-1">
-                <img src="assets/seamese_cat.jpg" alt="">
+                <img class="content-img" src="assets/seamese_cat.jpg" alt="">
                 <p>Catterate, The Juqegü</p>
             </div>
             <div class="cat-2">
-                <img src="assets/orange_cat.jpg" alt="">
+                <img class="content-img" src="assets/orange_cat.jpg" alt="">
                 <p><i class="fi fi-sr-envelope"></i></p>
             </div>
             <div class="cat-3">
-                <img src="assets/maine_coon_cat.jpg" alt="">
+                <img class="content-img" src="assets/maine_coon_cat.jpg" alt="">
                 <p>𐰚𐰃𐰼𐰠𐰃</p>
             </div>
             <div class="cat-4">
-                <img src="assets/orange_cat_2.jpg" alt="">
+                <img class="content-img" src="assets/orange_cat_2.jpg" alt="">
                 <p><i class="fa-solid fa-cat"></i></p>
             </div>
             <div class="cat-5">
-                <img src="assets/seamese_cat_stand.jpg" alt="">
+                <img class="content-img" src="assets/seamese_cat_stand.jpg" alt="">
                 <p></p>
             </div>
             <div class="cat-6">
-                <img src="assets/gray_cat.jpg" alt="">
+                <img class="content-img" src="assets/gray_cat.jpg" alt="">
                 <p></p>
             </div>
+        </div>
+        <div id="cat-videos" class="cat-videos cat-gallery-display-none">
+            <iframe class="embed-video" src="https://www.youtube.com/embed/BNSp_DFr5f0"
+                title="Cats with threatening aura"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <iframe class="embed-video" src="https://www.youtube.com/embed/BTiYsNyCrMM"
+                title="Komik Kediler / Köpekler - Komik hayvanlar 286"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <iframe class="embed-video" src="https://www.youtube.com/embed/xeW6_EVZNXE" 
+                title="😂 LAUGH Non-Stop With These Funny Cats 😹 - Funniest Cats Expression Video 😇 - Funny Cats Life" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
+            <iframe class="embed-video" src="https://www.youtube.com/embed/r-sBTcxyLLw" 
+                title="BEST CAT MEMES COMPILATION OF 2022 PART 2" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
         </div>
     </section>
     <section id="ratings" class="ratings container">
@@ -208,17 +229,13 @@
             </div>
             <input class="input-h" type="tel" name="Tel" id="tel" placeholder="Telephone Number">
             <input class="input-h" type="text" name="Address" id="address" placeholder="Your Address">
-            <input type="text" id="subject" name="Subject" placeholder="Subject" autocomplete="off">
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Text" required></textarea>
+            <input class="input-h" type="text" id="subject" name="Subject" placeholder="Subject" autocomplete="off">
+            <div class="input-h required message-box">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Text" required></textarea>
+                <i class="fi fi-sr-cross-small input-required"></i>
+            </div>
             <button type="submit" id="submit">Send</button>
         </form>
-    </section>
-    <section id="videos" class="videos container">
-        <iframe class="embed video" src="https://www.youtube.com/embed/BNSp_DFr5f0"
-            title="Cats with threatening aura"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            ></iframe>
     </section>
     <footer class="card-footer">
         <h2>Page End</h2>

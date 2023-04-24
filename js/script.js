@@ -8,7 +8,6 @@ stars.forEach(star => {
 });
 
 // Carousel
-
 /* const slides = [
   'Wishing you health, wealth, and happiness in the New Year ahead.',
   'I hope all your dreams come true in 2021 — onwards and upwards!',
@@ -30,7 +29,7 @@ let index = 0;
 carouselNext.addEventListener('click', () => {
   carouselText[index].classList.remove('item-active');
   index += 1;
-  if(index >= carouselText.length) {
+  if (index >= carouselText.length) {
     index = 0;
   }
   updateCarousel(index);
@@ -39,7 +38,7 @@ carouselNext.addEventListener('click', () => {
 carouselPrev.addEventListener('click', () => {
   carouselText[index].classList.remove('item-active');
   index -= 1;
-  if(index < 0) {
+  if (index < 0) {
     index = carouselText.length - 1;
   }
   updateCarousel(index);
@@ -50,6 +49,8 @@ function updateCarousel(index) {
   carouselText[index].classList.add('item-active');
 }
 
+
+// Navbar dropdown
 const navbar = document.getElementById('navbar');
 const navbarToggle = document.getElementById('navbar-toggle');
 const navbarLinks = document.querySelectorAll('#navbar a');
@@ -64,6 +65,8 @@ navbarLinks.forEach(link => {
   });
 })
 
+
+// Logo animation
 const logo = document.getElementById('logo');
 
 logo.addEventListener('click', () => {
@@ -73,13 +76,38 @@ logo.addEventListener('click', () => {
   }, 600);
 });
 
+// Customer hover
 const customers = document.getElementsByClassName('customer')
 const r = Math.floor(Math.random() * 5) + 1
-for(let i of customers){
+for (let i of customers) {
   i.addEventListener('mouseover', () => {
-    i.style.rotate = (Math.floor(Math.random() * 10) - 5)+'deg';
+    i.style.rotate = (Math.floor(Math.random() * 10) - 5) + 'deg';
   })
   i.addEventListener('mouseout', () => {
     i.style.rotate = '0deg';
   })
 }
+
+// Cat content changer
+const photos = document.getElementById('cat-photos-btn')
+const videos = document.getElementById('cat-videos-btn')
+const catPhotos = document.getElementById('cat-photos')
+const catVideos = document.getElementById('cat-videos')
+
+photos.addEventListener('click', () => {
+  if (photos.classList.contains('cat-content-active')) {return}
+  videos.classList.remove('cat-content-active')
+  photos.classList.add('cat-content-active')
+
+  catPhotos.classList.remove('cat-gallery-display-none')
+  catVideos.classList.add('cat-gallery-display-none')
+})
+videos.addEventListener('click', () => {
+  if (videos.classList.contains('cat-content-active')) {return}
+  photos.classList.remove('cat-content-active')
+  videos.classList.add('cat-content-active')
+
+  catVideos.classList.remove('cat-gallery-display-none')
+  catPhotos.classList.add('cat-gallery-display-none')
+})
+
