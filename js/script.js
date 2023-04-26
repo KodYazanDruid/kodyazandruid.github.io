@@ -95,7 +95,7 @@ const catPhotos = document.getElementById('cat-photos')
 const catVideos = document.getElementById('cat-videos')
 
 photos.addEventListener('click', () => {
-  if (photos.classList.contains('cat-content-active')) {return}
+  if (photos.classList.contains('cat-content-active')) { return }
   videos.classList.remove('cat-content-active')
   photos.classList.add('cat-content-active')
 
@@ -103,11 +103,21 @@ photos.addEventListener('click', () => {
   catVideos.classList.add('cat-gallery-display-none')
 })
 videos.addEventListener('click', () => {
-  if (videos.classList.contains('cat-content-active')) {return}
+  if (videos.classList.contains('cat-content-active')) { return }
   photos.classList.remove('cat-content-active')
   videos.classList.add('cat-content-active')
 
   catVideos.classList.remove('cat-gallery-display-none')
   catPhotos.classList.add('cat-gallery-display-none')
 })
+
+const catVideoContainer = document.getElementById('cat-videos')
+for (let i = 0; i<7; i++) {
+  fetch('./ytp_embed/ytp_embed_videos/video_'+i+'.json')
+  .then(response => response.json())
+  .then(data => {
+    var jsonObject = JSON.parse(JSON.stringify(data));
+    catVideoContainer.innerHTML += jsonObject.embed_link;
+  })
+}
 

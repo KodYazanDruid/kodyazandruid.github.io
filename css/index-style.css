@@ -8,6 +8,7 @@
     --color-text: #d5eaf0;
     --color-star: #D4AF37;
     --color-soft-red: #F47174;
+    --color-soft-gray: #aaa;
 }
 
 * {
@@ -55,9 +56,8 @@ h1 {
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 700;
-    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -236,11 +236,12 @@ input:-webkit-autofill:active {
 }
 
 /* Section 2 */
-.cat-gallery h2 {
-    font-size: 64px;
-    font-weight: 700;
+
+.section-desc {
+    width: 70%;
+    margin: 0 auto 20px;
     text-align: center;
-    margin-bottom: 50px;
+    color: var(--color-soft-gray);
 }
 
 .content-changer {

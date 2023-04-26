@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index-style.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <title> (*´∇`)ﾉ Wonderfull Cats</title>
+    <link rel="icon" href="assets/paw_logo.png" type="image/png">
+    
 </head>
 
 <body>
@@ -84,6 +86,7 @@
     </section>
     <section id="cat-gallery" class="cat-gallery container">
         <h2>Cat Gallery</h2>
+        <p class="section-desc"><strong>*Click buttons below to change between videos and images.</strong></p>
         <div class="content-changer">
             <button id="cat-photos-btn" class="cat-content-active">Images</button>
             <button id="cat-videos-btn">Videos</button>
@@ -115,22 +118,7 @@
             </div>
         </div>
         <div id="cat-videos" class="cat-videos cat-gallery-display-none">
-            <iframe class="embed-video" src="https://www.youtube.com/embed/BNSp_DFr5f0"
-                title="Cats with threatening aura"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            <iframe class="embed-video" src="https://www.youtube.com/embed/BTiYsNyCrMM"
-                title="Komik Kediler / Köpekler - Komik hayvanlar 286"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            <iframe class="embed-video" src="https://www.youtube.com/embed/xeW6_EVZNXE" 
-                title="😂 LAUGH Non-Stop With These Funny Cats 😹 - Funniest Cats Expression Video 😇 - Funny Cats Life" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>
-            <iframe class="embed-video" src="https://www.youtube.com/embed/r-sBTcxyLLw" 
-                title="BEST CAT MEMES COMPILATION OF 2022 PART 2" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen></iframe>
+            <!-- Here be cat videos. -->
         </div>
     </section>
     <section id="ratings" class="ratings container">
@@ -218,6 +206,7 @@
     </section>
     <section id="contact" class="contact container">
         <h2>Contact</h2>
+        <p class="section-desc"><strong>*You can send me anonymous message below!</strong></p>
         <form class="contact-form" action="https://formspree.io/f/xlekoyyn" method="post">
             <div class="input-h required">
                 <input type="text" name="Name" id="name" placeholder="Your Name" required>
@@ -242,7 +231,6 @@
         <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik -
             Flaticon</a>
     </footer>
-    <script src="js/script.js" defer></script>
+    <script type="module" src="js/script.js" defer></script>
 </body>
-
 </html>
