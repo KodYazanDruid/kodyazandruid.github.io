@@ -49,13 +49,13 @@ function updateCarousel(index) {
   carouselText[index].classList.add('item-active');
 }
 
-
 // Navbar dropdown
 const navbar = document.getElementById('navbar');
 const navbarToggle = document.getElementById('navbar-toggle');
 const navbarLinks = document.querySelectorAll('#navbar a');
 
 navbarToggle.addEventListener('click', () => {
+  navbarToggle.classList.toggle('menu-open');
   navbar.classList.toggle('active');
   console.log('clicked');
 });
@@ -64,7 +64,6 @@ navbarLinks.forEach(link => {
     navbar.classList.remove('active');
   });
 })
-
 
 // Logo animation
 const logo = document.getElementById('logo');
@@ -113,19 +112,17 @@ videos.addEventListener('click', () => {
 
 // Cat videos
 const catVideoContainer = document.getElementById('cat-videos')
-const srcPattern = /src="([^"]*)"/
 fetch('./assets/ytp_embed/ytp_raw_embed_links.txt')
   .then(response => response.text())
   .then(text => {
     const links = text.split('\n')
     for (let link of links){
       const video = document.createElement('iframe')
-      video.src = link.match(srcPattern)[1]
+      video.src = link.match(/src="([^"]*)"/)[1]
       video.classList.add('embed-video')
-      video.title = 'title'
-      video.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+      video.title = link.match(/title="([^"]*)"/)[1]
+      video.allow = link.match(/allow="([^"]*)"/)[1]
       video.allowFullscreen = true
-      video.classList.add('cat-video')
       catVideoContainer.appendChild(video)
     }
   })
