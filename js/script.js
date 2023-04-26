@@ -111,13 +111,21 @@ videos.addEventListener('click', () => {
   catPhotos.classList.add('cat-gallery-display-none')
 })
 
+// Cat videos
 const catVideoContainer = document.getElementById('cat-videos')
-for (let i = 0; i<7; i++) {
-  fetch('./ytp_embed/ytp_embed_videos/video_'+i+'.json')
-  .then(response => response.json())
-  .then(data => {
-    var jsonObject = JSON.parse(JSON.stringify(data));
-    catVideoContainer.innerHTML += jsonObject.embed_link;
+const srcPattern = /src="([^"]*)"/
+fetch('./assets/ytp_embed/ytp_raw_embed_links.txt')
+  .then(response => response.text())
+  .then(text => {
+    const links = text.split('\n')
+    for (let link of links){
+      const video = document.createElement('iframe')
+      video.src = link.match(srcPattern)[1]
+      video.classList.add('embed-video')
+      video.title = 'title'
+      video.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+      video.allowFullscreen = true
+      video.classList.add('cat-video')
+      catVideoContainer.appendChild(video)
+    }
   })
-}
-
